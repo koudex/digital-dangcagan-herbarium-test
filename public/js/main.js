@@ -312,16 +312,75 @@
     const url = qrBox.getAttribute('data-url');
     renderQRCode(qrBox, url, 180);
 
-    // Download QR as image
+    // Download QR as a print-ready label image (with quiet zone + plant name)
     const qrDownload = document.getElementById('qrDownload');
     if (qrDownload) {
       qrDownload.addEventListener('click', () => {
-        const canvas = qrBox.querySelector('canvas');
-        if (!canvas) return;
+        const srcCanvas = qrBox.querySelector('canvas');
+        if (!srcCanvas) return;
+
+        const plantNameEl = document.querySelector('.plant-title');
+        const latinNameEl = document.querySelector('.plant-scientific');
+        const plantName = plantNameEl ? plantNameEl.textContent.trim() : 'Plant';
+        const latinName = latinNameEl ? latinNameEl.textContent.trim() : '';
+        const slug = url.split('/').pop();
+
+        // Compose a larger canvas with:
+        //   ┌──────────────────────────────┐
+        //   │  Plant Name (serif, bold)     │  ← header label
+        //   │  Scientific name (italic)     │
+        //   │  ┌──────────────────────┐    │
+        //   │  │                      │    │
+        //   │  │   QR CODE (centered) │    │  ← quiet zone margin around QR
+        //   │  │                      │    │
+        //   │  └──────────────────────┘    │
+        //   │  /plant/slug                  │  ← URL footer
+        //   └──────────────────────────────┘
+        const qrSize = srcCanvas.width;            // 180
+        const quietZone = Math.max(20, Math.round(qrSize * 0.12)); // ~22px margin (≈ 4 QR modules)
+        const padX = 40;
+        const padTop = 90;
+        const padBottom = 60;
+        const outW = qrSize + quietZone * 2 + padX * 2;
+        const outH = qrSize + quietZone * 2 + padTop + padBottom;
+
+        const out = document.createElement('canvas');
+        out.width = outW;
+        out.height = outH;
+        const ctx = out.getContext('2d');
+
+        // 1. White background (essential for QR scanners)
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, outW, outH);
+
+        // 2. Plant name header (serif, bold, dark green)
+        ctx.fillStyle = '#2d5a3d';
+        ctx.font = 'bold 30px "Cormorant Garamond", Georgia, serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillText(plantName, outW / 2, 20);
+
+        // 3. Scientific name (italic, gray)
+        if (latinName) {
+          ctx.fillStyle = '#6b7a6b';
+          ctx.font = 'italic 16px "Inter", sans-serif';
+          ctx.fillText(latinName, outW / 2, 58);
+        }
+
+        // 4. QR code centered with quiet zone
+        const qrX = (outW - qrSize) / 2;
+        const qrY = padTop;
+        ctx.drawImage(srcCanvas, qrX, qrY);
+
+        // 5. URL footer
+        ctx.fillStyle = '#6b7a6b';
+        ctx.font = '13px "SF Mono", Monaco, monospace';
+        ctx.fillText(`/plant/${slug}`, outW / 2, outH - 30);
+
+        // 6. Download
         const link = document.createElement('a');
-        const plantName = document.querySelector('.plant-title');
-        link.download = `qr-${(plantName ? plantName.textContent : 'plant').toLowerCase().replace(/\s+/g, '-')}.png`;
-        link.href = canvas.toDataURL('image/png');
+        link.download = `qr-${slug}.png`;
+        link.href = out.toDataURL('image/png');
         link.click();
       });
     }
