@@ -1,0 +1,42 @@
+  </main>
+
+  <!-- ─── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/images/logo.jpeg" alt="Dangcagan NHS logo" width="56" height="56" />
+        <div>
+          <p class="footer-title">Dangcagan National High School</p>
+          <p class="footer-subtitle">Digital Herbarium — A QR Code-Enhanced Herbal Plant Collection</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="/">Home</a>
+        <a href="/home">Collection</a>
+        <a href="/search">Search</a>
+        <a href="/qrcodes">QR Codes</a>
+        <a href="/about">About</a>
+      </div>
+
+      <div class="footer-info">
+        <h4>About this project</h4>
+        <p>An educational digital herbarium documenting Philippine medicinal plants. Each plant has a unique QR code that links directly to its detail page.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <%= new Date().getFullYear() %> Dangcagan National High School. For educational purposes.</p>
+      <p class="footer-credit">Built with Express &amp; EJS &middot; Plants stored as JSON</p>
+    </div>
+  </footer>
+
+  <!-- Fuse.js for client-side fuzzy search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
+  <!-- QRCode.js for QR code generation -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
+  <!-- App script -->
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
