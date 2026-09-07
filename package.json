@@ -1,0 +1,30 @@
+{
+  "name": "dangcagan-herbarium",
+  "version": "1.0.0",
+  "description": "Dangcagan NHS Digital Herbarium: A QR Code-Enhanced Herbal Plant Collection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "herbarium",
+    "herbal",
+    "plants",
+    "dangcagan",
+    "school",
+    "digital-herbarium"
+  ],
+  "author": "Dangcagan National High School",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
