@@ -27,9 +27,9 @@
     </form>
 
     <div class="filter-chips">
-      <a href="/home" class="chip<%= activeCategory === 'all' ? ' is-active' : '' %>">All (<%= totalPlants %>)</a>
+      <a href="/browse" class="chip<%= activeCategory === 'all' ? ' is-active' : '' %>">All (<%= totalPlants %>)</a>
       <% categories.forEach(cat => { %>
-        <a href="/home?category=<%= encodeURIComponent(cat) %>" class="chip<%= activeCategory === cat ? ' is-active' : '' %>"><%= cat %></a>
+        <a href="/browse?category=<%= encodeURIComponent(cat) %>" class="chip<%= activeCategory === cat ? ' is-active' : '' %>"><%= cat %></a>
       <% }); %>
     </div>
   </div>
@@ -42,7 +42,7 @@
       <div class="empty-state">
         <h3>No plants in this category yet</h3>
         <p>Try a different filter or browse the full collection.</p>
-        <a href="/home" class="btn btn-outline">View all</a>
+        <a href="/browse" class="btn btn-outline">View all</a>
       </div>
     <% } else { %>
       <div class="plant-grid" id="plantGrid">
