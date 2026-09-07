@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 });
 
 // Home — browse + search
-app.get('/home', (req, res) => {
+app.get('/browse', (req, res) => {
   const data = loadPlants();
   const { category, tag } = req.query;
   let plants = data.plants;
@@ -78,7 +78,7 @@ app.get('/home', (req, res) => {
 
   const categories = [...new Set(data.plants.map(p => p.category).filter(Boolean))];
 
-  res.render('home', {
+  res.render('browse', {
     title: 'Browse Plants — Dangcagan NHS Herbarium',
     plants,
     categories,
