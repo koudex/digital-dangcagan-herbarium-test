@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Dangcagan NHS Digital Herbarium",
+    "subtitle": "A QR Code-Enhanced Herbal Plant Collection",
+    "lastUpdated": "2025-09-07",
+    "version": "1.0.0"
+  },
+  "plants": [
+    {
+      "slug": "oregano",
+      "name": "Oregano",
+      "scientificName": "Coleus aromaticus",
+      "family": "Lamiaceae",
+      "otherNames": ["Mexican Mint", "Cuban Oregano", "Indian Borage"],
+      "category": "Medicinal",
+      "tags": ["herb", "respiratory", "aromatic", "common"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8b252ce4cefd.webp",
+      "shortDescription": "A aromatic succulent herb widely used in Filipino households for treating coughs, colds, and respiratory congestion.",
+      "description": "Oregano (Coleus aromaticus), known locally in the Philippines as a remedy for respiratory ailments, is a succulent perennial herb with fleshy, scalloped leaves and a strong aromatic scent. It is one of the ten medicinal plants officially endorsed by the Philippine Department of Health under its Traditional Health Program. The plant grows easily in tropical backyards, requiring minimal care, and can reach up to 1 meter in height. Its leaves contain essential oils such as carvacrol and thymol, which give the plant its antimicrobial and expectorant properties. In Filipino folk medicine, oregano is most commonly prepared as a tea or syrup for cough relief.",
+      "medicinalUses": [
+        "Relieves cough and sore throat",
+        "Treats common colds and nasal congestion",
+        "Acts as an expectorant for phlegm",
+        "Soothes mild asthma symptoms",
+        "Helps with digestive issues like indigestion"
+      ],
+      "preparation": "Wash 5–8 fresh leaves thoroughly. Boil in 2 cups of water for 10–15 minutes until reduced to 1 cup. Strain and drink while warm. Honey may be added for taste, especially for children. For cough syrup, mix the decoction with an equal amount of honey and store in a clean bottle.",
+      "habitat": "Native to Southern and Eastern Africa, but widely cultivated throughout tropical Asia and the Philippines. Thrives in warm, humid climates with well-draining soil.",
+      "cultivation": "Grows best in partial shade to full sun. Propagates easily from stem cuttings placed directly in soil. Requires regular watering but cannot tolerate waterlogged roots. Can be grown in containers or directly in the ground.",
+      "precautions": "Not recommended for pregnant women as it may stimulate uterine contractions. Avoid prolonged use beyond 7 consecutive days. Consult a doctor before giving to children under 2 years old.",
+      "funFact": "Despite its common name, Filipino oregano (Coleus aromaticus) is not the same plant as Mediterranean oregano (Origanum vulgare) — they belong to different genera but share similar aromatic properties."
+    },
+    {
+      "slug": "lagundi",
+      "name": "Lagundi",
+      "scientificName": "Vitex negundo",
+      "family": "Lamiaceae",
+      "otherNames": ["Five-leaved Chaste Tree", "Nirgundi", "Dabtan"],
+      "category": "Medicinal",
+      "tags": ["tree", "respiratory", "doh-approved", "common"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/614d1d97eac2.jpg",
+      "shortDescription": "A small tree with five-leaflet leaves, scientifically proven as an effective treatment for cough and asthma.",
+      "description": "Lagundi (Vitex negundo) is a large shrub or small tree growing 2–5 meters tall, easily recognized by its distinctive palmate leaves composed of five leaflets radiating from a single point. It is one of the ten medicinal plants officially endorsed by the Philippine Department of Health, and is one of the most scientifically studied Filipino medicinal plants. Commercial lagundi syrups and tablets are widely available in Philippine drugstores. The plant contains alkaloids, flavonoids, and essential oils that have been clinically demonstrated to have anti-inflammatory, analgesic, and bronchodilator effects, making it particularly effective for respiratory conditions.",
+      "medicinalUses": [
+        "Treatment of cough, colds, and fever",
+        "Relief of asthma symptoms and bronchial spasms",
+        "Alleviates rheumatism and joint pain",
+        "Treats skin diseases like eczema and scabies",
+        "Reduces inflammation and pain"
+      ],
+      "preparation": "For cough: Boil a handful of fresh leaves in 3 cups of water for 15 minutes. Strain and drink 1 cup three times a day. For skin conditions: Crush fresh leaves and apply as a poultice on affected areas. For rheumatism: Boil leaves and use the warm decoction for steam inhalation or as a bath.",
+      "habitat": "Native to tropical and subtropical regions of Asia, including the Philippines. Commonly found in wastelands, along riverbanks, and in secondary forests throughout the country.",
+      "cultivation": "Hardy plant that grows in almost any soil type. Propagated through seeds or stem cuttings. Requires full sun and regular watering when young, but becomes drought-tolerant once established. Can be pruned to maintain shrub size.",
+      "precautions": "Generally safe when used as directed. Pregnant women should consult a physician before use. May interact with diabetes medications. Discontinue use if allergic reactions occur.",
+      "funFact": "Lagundi is so scientifically validated that the Philippine Department of Health officially promotes it as an alternative to commercial cough medicines. It is one of only a few plants commercially manufactured into pharmaceutical tablets by Filipino companies."
+    },
+    {
+      "slug": "sambong",
+      "name": "Sambong",
+      "scientificName": "Blumea balsamifera",
+      "family": "Asteraceae",
+      "otherNames": ["Ngai Camphor", "Blumea Camphor", "Bulong"],
+      "category": "Medicinal",
+      "tags": ["shrub", "kidney", "doh-approved", "diuretic"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/401039b2262e.jpg",
+      "shortDescription": "A woody shrub with camphor-scented leaves, scientifically validated as a diuretic for kidney stones.",
+      "description": "Sambong (Blumea balsamifera) is an erect, woody shrub that grows 1–3 meters tall, with hairy, aromatic leaves that smell strongly of camphor when crushed. It is among the ten medicinal plants officially endorsed by the Philippine Department of Health. Sambong has been the subject of extensive scientific research, particularly for its kidney stone-dissolving properties. The Philippine National Integrated Research Program on Medicinal Drugs (NIRPROMP) developed a commercial sambong tablet (Re-leaf) that is sold as a registered drug for urolithiasis (kidney stones). The leaves contain essential oils including borneol and camphor, which contribute to its diuretic and anti-inflammatory actions.",
+      "medicinalUses": [
+        "Dissolves kidney stones and prevents their formation",
+        "Acts as a diuretic to promote urination",
+        "Treats edema (fluid retention)",
+        "Helps manage mild hypertension",
+        "Relieves stomach pain and diarrhea"
+      ],
+      "preparation": "For kidney stones: Boil a handful of chopped fresh leaves in 3 cups of water for 15–20 minutes. Strain and divide into 3 doses taken throughout the day. Continue for 2–3 weeks. For hypertension: Drink 1 cup of leaf decoction twice daily.",
+      "habitat": "Widely distributed throughout Southeast Asia, including the Philippines. Commonly found in open grasslands, abandoned fields, and along roadsides at low to medium elevations.",
+      "cultivation": "Grows easily in tropical climates. Propagated by seeds or stem cuttings. Prefers full sun and well-drained soil. Tolerates poor soil conditions and requires minimal maintenance once established.",
+      "precautions": "Patients with pre-existing kidney disease should consult a nephrologist before use. May increase urination frequency — ensure adequate hydration. Not recommended during pregnancy without medical supervision.",
+      "funFact": "Sambong was the first Philippine medicinal plant to be commercially developed into a registered pharmaceutical tablet by Filipino scientists. The research took over 15 years and was funded by the Philippine Council for Health Research and Development (PCHRD)."
+    },
+    {
+      "slug": "tsaang-gubat",
+      "name": "Tsaang Gubat",
+      "scientificName": "Ehretia microphylla",
+      "family": "Boraginaceae",
+      "otherNames": ["Wild Tea", "Alangit", "Putputai", "Fukugi"],
+      "category": "Medicinal",
+      "tags": ["shrub", "stomach", "doh-approved", "diarrhea"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c69f9a01cc96.jpg",
+      "shortDescription": "A forest shrub used as a natural remedy for stomach ailments and diarrhea.",
+      "description": "Tsaang Gubat (Ehretia microphylla), literally meaning 'forest tea,' is a spiny shrub that grows 1–4 meters tall, commonly found in Philippine forests and secondary growth areas. It is one of the ten medicinal plants officially endorsed by the Philippine Department of Health. The leaves are small, shiny, and toothed along the edges. When prepared as a tea, it has a mild, slightly bitter taste. Scientific studies have confirmed its antimicrobial and antispasmodic properties, validating its traditional use for gastrointestinal problems. The shrub is also valued as an ornamental plant due to its small white flowers and red berries.",
+      "medicinalUses": [
+        "Treats stomach cramps and abdominal pain",
+        "Relieves diarrhea and gastroenteritis",
+        "Acts as a mouthwash for dental cavities",
+        "Helps with mild food poisoning",
+        "Soothes urinary tract infections"
+      ],
+      "preparation": "For stomach ache and diarrhea: Boil a handful of fresh leaves in 3 cups of water for 15 minutes. Strain and drink 1 cup every 4 hours until symptoms improve. As a mouthwash: Use cooled decoction to gargle 2–3 times daily.",
+      "habitat": "Native to the Philippines and other tropical Asian countries. Found in primary and secondary forests, thickets, and along forest edges, often at low elevations.",
+      "cultivation": "Propagated by seeds or stem cuttings. Prefers partial shade but tolerates full sun. Grows well in loamy soil with regular watering. Can be shaped into a hedge or ornamental shrub.",
+      "precautions": "Generally safe for short-term use. Prolonged use beyond 2 weeks is not recommended without medical advice. Discontinue if symptoms persist for more than 48 hours.",
+      "funFact": "The name 'Tsaang Gubat' literally translates to 'forest tea' in Filipino, referring to the traditional practice of brewing its leaves as a tea-like beverage for medicinal purposes."
+    },
+    {
+      "slug": "akapulko",
+      "name": "Akapulko",
+      "scientificName": "Cassia alata",
+      "family": "Fabaceae",
+      "otherNames": ["Ringworm Bush", "Candle Bush", "Bayabas-baloy", "Acapulco"],
+      "category": "Medicinal",
+      "tags": ["shrub", "antifungal", "skin", "doh-approved"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/035d623327ed.jpg",
+      "shortDescription": "A flowering shrub with powerful antifungal properties, effective against ringworm and other skin infections.",
+      "description": "Akapulko (Cassia alata), also known as the ringworm bush, is a tall shrub growing 1–3 meters high, distinguished by its large, compound leaves and bright yellow, candle-like flower spikes. It is one of the ten medicinal plants officially endorsed by the Philippine Department of Health, primarily for its antifungal properties. The leaves contain chrysophanic acid and other anthraquinones, compounds scientifically proven to be effective against dermatophytic fungi that cause ringworm, athlete's foot, and scabies. Akapulko is widely cultivated in Filipino backyards and is also planted as an ornamental due to its striking yellow flower spikes that bloom year-round in tropical climates.",
+      "medicinalUses": [
+        "Treats ringworm (tinea corporis)",
+        "Cures athlete's foot and jock itch",
+        "Heals scabies and eczema",
+        "Removes intestinal parasites",
+        "Treats insect bites and skin allergies"
+      ],
+      "preparation": "For ringworm and skin fungal infections: Crush fresh leaves and rub directly on affected areas 2–3 times daily until cured. Alternatively, boil a handful of leaves in water, let cool, and use as a wash. For intestinal parasites: Drink 1 cup of leaf decoction once daily for 3 days.",
+      "habitat": "Native to tropical America but now widely distributed throughout the tropics, including the Philippines. Grows in open areas, along roadsides, and in disturbed soils at low to medium elevations.",
+      "cultivation": "Fast-growing and adaptable. Propagated by seeds, which germinate readily. Prefers full sun and moist, well-drained soil. Tolerates drought once established. May become invasive in some areas if not managed.",
+      "precautions": "For external use only — do not apply on open wounds. Discontinue if skin irritation occurs. Internal use should be limited to 3 consecutive days. Not recommended for pregnant women and young children.",
+      "funFact": "The species name 'alata' means 'winged' in Latin, referring to the winged stems of the plant. The common name 'candle bush' comes from its upright yellow flower spikes that resemble candles."
+    },
+    {
+      "slug": "bayabas",
+      "name": "Bayabas",
+      "scientificName": "Psidium guajava",
+      "family": "Myrtaceae",
+      "otherNames": ["Guava", "Tova", "Biaba", "Guayaba"],
+      "category": "Medicinal",
+      "tags": ["tree", "antiseptic", "fruit", "doh-approved", "common"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/db572a3072f9.jpg",
+      "shortDescription": "The common guava tree, whose leaves are a powerful natural antiseptic for wounds and mouth sores.",
+      "description": "Bayabas (Psidium guajava), commonly known as guava, is a small tree growing 3–10 meters tall, easily recognized by its smooth bark that peels in patches and its round, yellow-green fruits. While the fruit is widely eaten as food worldwide, in the Philippines the leaves are valued as one of the ten medicinal plants officially endorsed by the Department of Health. The leaves are rich in tannins, flavonoids, and essential oils that give them strong antimicrobial and astringent properties. Guava leaf decoction is a staple in Filipino households for treating wounds, mouth ulcers, and as a vaginal wash after childbirth. The plant is also a rich source of vitamin C — a single guava fruit contains four times the vitamin C of an orange.",
+      "medicinalUses": [
+        "Disinfects wounds and skin infections",
+        "Treats mouth sores and swollen gums",
+        "Relieves diarrhea and dysentery",
+        "Used as postpartum vaginal wash",
+        "Helps lower blood sugar in diabetics"
+      ],
+      "preparation": "For wound cleaning: Boil a handful of fresh leaves in 3 cups of water for 15 minutes. Cool and use to wash wounds 2–3 times daily. For mouth sores: Use as gargle 3–4 times a day. For diarrhea: Drink 1 cup of warm decoction every 4 hours. For vaginal wash: Use cooled, strained decoction after bathing.",
+      "habitat": "Native to Central and South America but now pantropical. Widely cultivated and naturalized throughout the Philippines at low to medium elevations. Grows in a variety of soil types.",
+      "cultivation": "Propagated by seeds or grafting. Prefers full sun and well-drained soil. Bears fruit 2–4 years after planting. Tolerates drought and poor soil conditions. Prune regularly to maintain shape and encourage fruiting.",
+      "precautions": "Generally safe for topical and oral use. Diabetic patients taking medications should monitor blood sugar closely as guava leaves may enhance insulin effects. Consult a doctor before using during pregnancy.",
+      "funFact": "A single guava fruit contains about 4 times more vitamin C than an orange, making it one of the most vitamin C-rich fruits in the world. The leaves have been scientifically proven to lower blood sugar levels in type 2 diabetes patients."
+    },
+    {
+      "slug": "malunggay",
+      "name": "Malunggay",
+      "scientificName": "Moringa oleifera",
+      "family": "Moringaceae",
+      "otherNames": ["Moringa", "Horseradish Tree", "Kamalunggay", "Ben Oil Tree"],
+      "category": "Medicinal",
+      "tags": ["tree", "nutritious", "superfood", "doh-approved", "common"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/44abc2628de8.jpg",
+      "shortDescription": "The miracle tree, packed with vitamins and minerals, used to combat malnutrition worldwide.",
+      "description": "Malunggay (Moringa oleifera), often called the 'miracle tree' or 'tree of life,' is a fast-growing deciduous tree reaching 5–10 meters in height, with delicate, fern-like leaves and long, slender seed pods. It is one of the ten medicinal plants officially endorsed by the Philippine Department of Health, but is also widely consumed as a vegetable throughout the country. Malunggay is considered one of the most nutrient-dense plants known to science — its leaves contain 7 times the vitamin C of oranges, 4 times the calcium of milk, 4 times the vitamin A of carrots, 3 times the potassium of bananas, and 2 times the protein of yogurt, gram for gram. The plant has gained international recognition as a superfood and is being promoted globally as a sustainable solution for malnutrition. Beyond nutrition, malunggay also has antibacterial, anti-inflammatory, and antioxidant properties.",
+      "medicinalUses": [
+        "Combats malnutrition in children and adults",
+        "Boosts breast milk production in nursing mothers",
+        "Helps manage blood sugar levels",
+        "Reduces inflammation and joint pain",
+        "Supports immune system function"
+      ],
+      "preparation": "As food: Add fresh leaves to soups, stews, and vegetable dishes. For tea: Steep 1 tablespoon of dried leaves in hot water for 5 minutes; drink 1–2 cups daily. For lactation support: Consume a cup of fresh leaves daily or take 2–3 capsules of dried leaf powder.",
+      "habitat": "Native to the foothills of the Himalayas in northwestern India but now cultivated throughout the tropics worldwide. Grows abundantly in the Philippines at low to medium elevations.",
+      "cultivation": "Extremely hardy and drought-tolerant. Propagated by seeds or cuttings. Grows rapidly — can reach 3 meters in the first year. Thrives in full sun and well-drained soil. Tolerates poor soil conditions and dry climates.",
+      "precautions": "Generally very safe as a food. The root bark and extracts may have contraceptive effects — pregnant women should avoid concentrated extracts. May interact with thyroid medications.",
+      "funFact": "Malunggay is so nutritious that international humanitarian organizations use it as a frontline weapon against childhood malnutrition in Africa and Asia. The leaves can be dried, ground into powder, and stored for years without losing their nutritional value."
+    },
+    {
+      "slug": "balanoy",
+      "name": "Balanoy",
+      "scientificName": "Ocimum basilicum",
+      "family": "Lamiaceae",
+      "otherNames": ["Sweet Basil", "Balanoi", "Common Basil", "Saint Joseph's Wort"],
+      "category": "Medicinal",
+      "tags": ["herb", "aromatic", "culinary", "antibacterial"],
+      "image": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/60f28022b00a.jpg",
+      "shortDescription": "Sweet basil, a fragrant herb with culinary and medicinal uses for digestion and skin care.",
+      "description": "Balanoy (Ocimum basilicum), known globally as sweet basil, is an aromatic annual herb growing 30–60 centimeters tall, with bright green, oval leaves and small white or purple flowers arranged in spikes. While most Filipinos know basil as a culinary herb used in Italian and Asian dishes, it has a long history of medicinal use in Filipino folk medicine. The leaves contain essential oils such as linalool, estragole, and eugenol, which give the plant its antibacterial, anti-inflammatory, and carminative (gas-relieving) properties. In traditional Filipino medicine, balanoy is used as a tea for digestive complaints, a poultice for insect bites, and an inhalant for headaches. The plant is easy to grow and is a common sight in household gardens across the Philippines.",
+      "medicinalUses": [
+        "Relieves indigestion and flatulence",
+        "Treats minor wounds and insect bites",
+        "Soothes headaches and stress",
+        "Reduces inflammation and swelling",
+        "Helps with bad breath and oral hygiene"
+      ],
+      "preparation": "For indigestion: Steep 5–8 fresh leaves in 1 cup of hot water for 5 minutes. Drink after meals. For insect bites: Crush fresh leaves and apply directly to the bite. For headaches: Boil leaves and inhale the steam, or apply crushed leaves to the temples.",
+      "habitat": "Native to tropical Asia and the Pacific Islands, but cultivated worldwide. Widely grown in the Philippines in household gardens, often in containers near the kitchen for easy culinary use.",
+      "cultivation": "Easy to grow from seeds or cuttings. Prefers full sun to partial shade and rich, well-drained soil. Requires regular watering. Pinch off flower buds to encourage leaf growth and extend the plant's productive life.",
+      "precautions": "Generally safe as a food and in medicinal doses. The essential oil should not be taken internally. Pregnant women should avoid medicinal doses, though culinary use is safe. May cause skin irritation in sensitive individuals when applied topically.",
+      "funFact": "The word 'basil' comes from the Greek 'basilikón,' meaning 'royal' — ancient Greeks considered basil the king of herbs. In some Filipino provinces, balanoy leaves are still placed in cupboards to repel insects naturally."
+    }
+  ]
+}
