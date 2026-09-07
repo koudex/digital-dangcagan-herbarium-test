@@ -22,7 +22,7 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const BASE_URL = process.env.BASE_URL || `https://digital-dangcagan-herbarium-test.onrender.con`;
 
 // ─── View engine ──────────────────────────────────────────────
 app.set('view engine', 'ejs');
