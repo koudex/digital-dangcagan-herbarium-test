@@ -1,0 +1,172 @@
+<%- include('partials/header', { title, currentPath }) %>
+
+<!-- ─── Breadcrumb ────────────────────────────────────────── -->
+<div class="container breadcrumb-wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="bc-sep">/</span>
+    <a href="/home">Collection</a>
+    <span class="bc-sep">/</span>
+    <span class="bc-current"><%= plant.name %></span>
+  </nav>
+</div>
+
+<!-- ─── Plant Hero ────────────────────────────────────────── -->
+<article class="plant-hero">
+  <div class="container plant-hero-grid">
+    <div class="plant-hero-media reveal" data-reveal>
+      <img src="<%= plant.image %>" alt="<%= plant.name %>" />
+      <span class="plant-category-badge"><%= plant.category %></span>
+    </div>
+
+    <div class="plant-hero-info reveal" data-reveal>
+      <span class="eyebrow"><%= plant.family %></span>
+      <h1 class="plant-title"><%= plant.name %></h1>
+      <p class="plant-scientific"><em><%= plant.scientificName %></em></p>
+
+      <% if (plant.otherNames && plant.otherNames.length) { %>
+        <p class="plant-other-names">
+          Also known as:
+          <% plant.otherNames.forEach((n, i) => { %>
+            <span class="other-name"><%= n %></span><%= i < plant.otherNames.length - 1 ? '' : '' %>
+          <% }); %>
+        </p>
+      <% } %>
+
+      <p class="plant-short-desc"><%= plant.shortDescription %></p>
+
+      <% if (plant.tags && plant.tags.length) { %>
+        <div class="plant-tags">
+          <% plant.tags.forEach(tag => { %>
+            <a href="/home?tag=<%= encodeURIComponent(tag) %>" class="tag">#<%= tag %></a>
+          <% }); %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</article>
+
+<!-- ─── Plant Body ────────────────────────────────────────── -->
+<div class="container plant-body-grid">
+
+  <!-- ─── Main Content ─────────────────────────────────────── -->
+  <main class="plant-main">
+
+    <section class="plant-section reveal" data-reveal id="overview">
+      <h2 class="plant-section-title">Overview</h2>
+      <p class="plant-section-text"><%= plant.description %></p>
+    </section>
+
+    <section class="plant-section reveal" data-reveal id="uses">
+      <h2 class="plant-section-title">Medicinal Uses</h2>
+      <ul class="plant-list">
+        <% plant.medicinalUses.forEach(use => { %>
+          <li><%= use %></li>
+        <% }); %>
+      </ul>
+    </section>
+
+    <section class="plant-section reveal" data-reveal id="preparation">
+      <h2 class="plant-section-title">Preparation &amp; Dosage</h2>
+      <p class="plant-section-text"><%= plant.preparation %></p>
+    </section>
+
+    <section class="plant-section plant-section-grid reveal" data-reveal id="habitat-cultivation">
+      <div>
+        <h2 class="plant-section-title">Habitat</h2>
+        <p class="plant-section-text"><%= plant.habitat %></p>
+      </div>
+      <div>
+        <h2 class="plant-section-title">Cultivation</h2>
+        <p class="plant-section-text"><%= plant.cultivation %></p>
+      </div>
+    </section>
+
+    <section class="plant-section plant-precaution reveal" data-reveal id="precautions">
+      <h2 class="plant-section-title">Precautions</h2>
+      <p class="plant-section-text"><%= plant.precautions %></p>
+    </section>
+
+    <section class="plant-section plant-fun-fact reveal" data-reveal id="fun-fact">
+      <h2 class="plant-section-title">Did You Know?</h2>
+      <p class="plant-section-text"><%= plant.funFact %></p>
+    </section>
+
+    <!-- Plant navigation -->
+    <nav class="plant-nav" aria-label="Plant navigation">
+      <% if (prevPlant) { %>
+        <a href="/plant/<%= prevPlant.slug %>" class="plant-nav-link plant-nav-prev">
+          <span class="pn-label">&larr; Previous</span>
+          <span class="pn-title"><%= prevPlant.name %></span>
+        </a>
+      <% } else { %>
+        <span></span>
+      <% } %>
+
+      <% if (nextPlant) { %>
+        <a href="/plant/<%= nextPlant.slug %>" class="plant-nav-link plant-nav-next">
+          <span class="pn-label">Next &rarr;</span>
+          <span class="pn-title"><%= nextPlant.name %></span>
+        </a>
+      <% } %>
+    </nav>
+  </main>
+
+  <!-- ─── Sidebar ──────────────────────────────────────────── -->
+  <aside class="plant-sidebar">
+
+    <!-- Quick facts -->
+    <div class="sidebar-card reveal" data-reveal>
+      <h3 class="sidebar-title">Quick Facts</h3>
+      <dl class="fact-list">
+        <div class="fact">
+          <dt>Family</dt>
+          <dd><%= plant.family %></dd>
+        </div>
+        <div class="fact">
+          <dt>Scientific Name</dt>
+          <dd><em><%= plant.scientificName %></em></dd>
+        </div>
+        <div class="fact">
+          <dt>Category</dt>
+          <dd><%= plant.category %></dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- QR Code card -->
+    <div class="sidebar-card sidebar-qr reveal" data-reveal>
+      <h3 class="sidebar-title">Scan to Access</h3>
+      <p class="qr-hint">This QR code links directly to this plant's record.</p>
+      <div class="qr-box" id="qrBox" data-url="<%= qrUrl %>"></div>
+      <p class="qr-url" title="<%= qrUrl %>"><%= qrUrl.replace(/^https?:\/\//, '') %></p>
+      <div class="qr-actions">
+        <button type="button" class="btn btn-sm btn-outline" id="qrDownload">Download</button>
+        <button type="button" class="btn btn-sm btn-ghost" id="qrCopy" data-url="<%= qrUrl %>">Copy link</button>
+      </div>
+    </div>
+
+    <!-- Related plants -->
+    <% if (related && related.length) { %>
+      <div class="sidebar-card reveal" data-reveal>
+        <h3 class="sidebar-title">Related Plants</h3>
+        <div class="related-list">
+          <% related.forEach(p => { %>
+            <a href="/plant/<%= p.slug %>" class="related-item">
+              <img src="<%= p.image %>" alt="<%= p.name %>" loading="lazy" width="56" height="56" />
+              <div>
+                <strong><%= p.name %></strong>
+                <span><em><%= p.scientificName %></em></span>
+              </div>
+            </a>
+          <% }); %>
+        </div>
+      </div>
+    <% } %>
+
+    <!-- Back to collection -->
+    <a href="/home" class="btn btn-outline btn-block">Back to Collection</a>
+  </aside>
+</div>
+
+<%- include('partials/footer') %>

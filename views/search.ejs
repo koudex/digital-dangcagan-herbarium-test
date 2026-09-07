@@ -1,0 +1,67 @@
+<%- include('partials/header', { title, currentPath }) %>
+
+<!-- ─── Search Header ─────────────────────────────────────── -->
+<section class="page-head">
+  <div class="container">
+    <span class="eyebrow">Search the Herbarium</span>
+    <h1 class="page-title">Find a Plant</h1>
+    <p class="page-subtitle">Fuzzy search across names, scientific names, medicinal uses, and tags. Like Wikipedia, but for Dangcagan herbal plants.</p>
+
+    <form action="/search" method="get" class="search-bar search-bar-large" id="searchForm">
+      <input
+        type="text"
+        name="q"
+        id="searchInput"
+        placeholder="Type a plant name, symptom, or scientific name..."
+        autocomplete="off"
+        value="<%= query %>"
+        aria-label="Search plants"
+      />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <div id="liveSuggestions" class="live-suggestions" hidden></div>
+  </div>
+</section>
+
+<!-- ─── Results ───────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div id="searchResults">
+      <% if (query) { %>
+        <p class="results-meta" id="resultsMeta">
+          Showing matches for "<strong><%= query %></strong>"...
+        </p>
+        <div class="plant-grid" id="plantGrid">
+          <!-- Results rendered client-side by main.js using Fuse.js fuzzy search -->
+        </div>
+        <div class="empty-state" id="noResults" hidden>
+          <h3>No plants matched</h3>
+          <p>Try a different spelling or a broader term. The fuzzy search should catch most typos.</p>
+          <a href="/home" class="btn btn-outline">Browse all plants</a>
+        </div>
+      <% } else { %>
+        <div class="search-empty">
+          <div class="search-empty-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Start typing to search</h3>
+          <p>Try searching for a plant by its common name, scientific name, or what it's used for.</p>
+          <div class="search-suggestions-list">
+            <p>Try:</p>
+            <button class="chip" data-search="lagundi">lagundi</button>
+            <button class="chip" data-search="cough">cough</button>
+            <button class="chip" data-search="kidney">kidney</button>
+            <button class="chip" data-search="skin">skin</button>
+            <button class="chip" data-search="malunggay">malunggay</button>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- Hidden data for client-side fuzzy search -->
+<script id="plantsData" type="application/json"><%- JSON.stringify(plants) %></script>
+
+<%- include('partials/footer') %>

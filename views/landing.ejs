@@ -1,0 +1,137 @@
+<%- include('partials/header', { title, currentPath }) %>
+
+<!-- ─── Hero ────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <img src="/images/logo.jpeg" alt="" width="24" height="24" />
+      <span>Dangcagan National High School</span>
+    </div>
+    <h1 class="hero-title">
+      Digital Herbarium
+      <span class="hero-title-accent">of Herbal Plants</span>
+    </h1>
+    <p class="hero-subtitle">
+      A QR Code-Enhanced Collection documenting Philippine medicinal plants.
+      Scan a QR code on a physical specimen to instantly access its full botanical record,
+      medicinal uses, preparation methods, and cultivation notes.
+    </p>
+    <div class="hero-actions">
+      <a href="/home" class="btn btn-primary">Browse Collection</a>
+      <a href="/search" class="btn btn-ghost">Search Plants</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num"><%= totalPlants %></span>
+        <span class="stat-label">Documented Plants</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">DOH</span>
+        <span class="stat-label">Approved Species</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">QR Code Access</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <span class="hero-scroll-line"></span>
+  </div>
+</section>
+
+<!-- ─── Featured Plants ─────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <span class="eyebrow">Featured Specimens</span>
+      <h2 class="section-title">From the Collection</h2>
+      <p class="section-subtitle">
+        A curated preview of plants documented in our digital herbarium.
+        Each card is a doorway to the plant's complete botanical record.
+      </p>
+    </header>
+
+    <div class="plant-grid">
+      <% featured.forEach(plant => { %>
+        <a href="/plant/<%= plant.slug %>" class="plant-card reveal" data-reveal>
+          <div class="plant-card-media">
+            <img src="<%= plant.image %>" alt="<%= plant.name %>" loading="lazy" />
+            <span class="plant-card-tag"><%= plant.category %></span>
+          </div>
+          <div class="plant-card-body">
+            <h3 class="plant-card-title"><%= plant.name %></h3>
+            <p class="plant-card-latin"><em><%= plant.scientificName %></em></p>
+            <p class="plant-card-desc"><%= plant.shortDescription %></p>
+            <span class="plant-card-link">View specimen &rarr;</span>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+
+    <div class="section-foot">
+      <a href="/home" class="btn btn-outline">View full collection &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── How It Works ────────────────────────────────────────── -->
+<section class="section section-alt">
+  <div class="container">
+    <header class="section-head">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-title">Scan, Learn, Discover</h2>
+      <p class="section-subtitle">
+        Each physical plant specimen in our garden is paired with a QR code.
+        Scanning the code with any smartphone instantly opens its digital record.
+      </p>
+    </header>
+
+    <div class="steps">
+      <div class="step reveal" data-reveal>
+        <div class="step-num">01</div>
+        <h3>Locate a Specimen</h3>
+        <p>Visit our school garden and find a plant with a QR code label on its stake or pot.</p>
+      </div>
+      <div class="step reveal" data-reveal>
+        <div class="step-num">02</div>
+        <h3>Scan the QR Code</h3>
+        <p>Open your phone's camera and point it at the QR code. A link will appear automatically.</p>
+      </div>
+      <div class="step reveal" data-reveal>
+        <div class="step-num">03</div>
+        <h3>Read the Record</h3>
+        <p>The link opens the plant's full digital record — botanical info, medicinal uses, and preparation guides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Search Teaser ──────────────────────────────────────── -->
+<section class="section search-teaser">
+  <div class="container search-teaser-inner">
+    <span class="eyebrow">Quick Lookup</span>
+    <h2 class="section-title">Find any plant by name</h2>
+    <p class="section-subtitle">Like Wikipedia, but specifically for Dangcagan herbal plants.</p>
+
+    <form action="/search" method="get" class="search-bar search-bar-large">
+      <input
+        type="text"
+        name="q"
+        id="heroSearch"
+        placeholder="Try &quot;lagundi&quot;, &quot;cough&quot;, &quot;kidney&quot;..."
+        autocomplete="off"
+        aria-label="Search plants"
+      />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <p class="search-hint">Tip: the search supports fuzzy matching, so typos still work.</p>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

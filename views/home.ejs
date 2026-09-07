@@ -1,0 +1,68 @@
+<%- include('partials/header', { title, currentPath }) %>
+
+<!-- ─── Page Header ────────────────────────────────────────── -->
+<section class="page-head">
+  <div class="container">
+    <span class="eyebrow">Collection</span>
+    <h1 class="page-title">Browse All Plants</h1>
+    <p class="page-subtitle">
+      The full herbarium collection — <%= totalPlants %> documented medicinal plants.
+      Use the search bar for fuzzy matching, or filter by category.
+    </p>
+
+    <form action="/search" method="get" class="search-bar" id="quickSearchForm">
+      <input
+        type="text"
+        name="q"
+        id="quickSearch"
+        placeholder="Search by name, use, or scientific name..."
+        autocomplete="off"
+        value="<%= typeof query !== 'undefined' ? query : '' %>"
+        aria-label="Search plants"
+      />
+      <button type="submit" class="btn btn-primary" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div class="search-suggestions" id="searchSuggestions" role="listbox" hidden></div>
+    </form>
+
+    <div class="filter-chips">
+      <a href="/home" class="chip<%= activeCategory === 'all' ? ' is-active' : '' %>">All (<%= totalPlants %>)</a>
+      <% categories.forEach(cat => { %>
+        <a href="/home?category=<%= encodeURIComponent(cat) %>" class="chip<%= activeCategory === cat ? ' is-active' : '' %>"><%= cat %></a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Plant Grid ─────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <% if (plants.length === 0) { %>
+      <div class="empty-state">
+        <h3>No plants in this category yet</h3>
+        <p>Try a different filter or browse the full collection.</p>
+        <a href="/home" class="btn btn-outline">View all</a>
+      </div>
+    <% } else { %>
+      <div class="plant-grid" id="plantGrid">
+        <% plants.forEach((plant, i) => { %>
+          <a href="/plant/<%= plant.slug %>" class="plant-card reveal" data-reveal style="--delay: <%= (i % 12) * 60 %>ms">
+            <div class="plant-card-media">
+              <img src="<%= plant.image %>" alt="<%= plant.name %>" loading="lazy" />
+              <span class="plant-card-tag"><%= plant.category %></span>
+            </div>
+            <div class="plant-card-body">
+              <h3 class="plant-card-title"><%= plant.name %></h3>
+              <p class="plant-card-latin"><em><%= plant.scientificName %></em></p>
+              <p class="plant-card-desc"><%= plant.shortDescription %></p>
+              <span class="plant-card-link">View specimen &rarr;</span>
+            </div>
+          </a>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
