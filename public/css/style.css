@@ -263,13 +263,28 @@ code {
   flex-shrink: 0;
 }
 
+/* Dual-logo group: school logo + herbarium logo side-by-side */
+.brand-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
 .brand-logo {
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--sage-light);
+  background: var(--white);
   transition: transform var(--dur) var(--ease);
+  width: 40px;
+  height: 40px;
+}
+/* Second logo slightly offset for a layered/badge look */
+.brand-logo-alt {
+  margin-left: -10px;
+  border-color: var(--accent);
 }
 .brand:hover .brand-logo { transform: rotate(-6deg) scale(1.05); }
+.brand:hover .brand-logo-alt { transform: rotate(6deg) scale(1.05); }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name {
@@ -399,6 +414,21 @@ code {
   font-weight: 500;
   margin-bottom: var(--space-lg);
   backdrop-filter: blur(8px);
+}
+/* Dual logos in hero badge */
+.hero-badge-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.hero-badge-logos img {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--white);
+  object-fit: cover;
+}
+.hero-badge-logos img:last-child {
+  margin-left: -8px;
 }
 .hero-badge img { border-radius: 50%; }
 
@@ -869,7 +899,77 @@ code {
 }
 
 .plant-hero-info { display: flex; flex-direction: column; justify-content: center; }
-.plant-title {
+
+/* Collection card — below the image, before any name/detail */
+.plant-hero-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.collection-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+.collection-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px dashed var(--border);
+}
+.collection-icon { color: var(--accent-dark); flex-shrink: 0; }
+.collection-title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-dark);
+  margin: 0;
+}
+.collection-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.collection-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: var(--space-md);
+  align-items: baseline;
+}
+.collection-row dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 500;
+}
+.collection-row dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+.collection-row dd time { color: var(--text); }
+
+@media (max-width: 480px) {
+  .collection-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+  .collection-row dt { font-size: 0.72rem; }
+  .collection-row dd { font-size: 0.9rem; }
+  
+}.plant-title {
   font-size: clamp(2rem, 5vw, 3.2rem);
   color: var(--primary);
   margin-bottom: 0.3rem;
@@ -1320,7 +1420,19 @@ code {
   align-items: center;
   gap: var(--space-md);
 }
-.footer-brand img { border-radius: 50%; }
+/* Dual logos in footer */
+.footer-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.footer-brand img {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--white);
+  object-fit: cover;
+}
+.footer-brand img:last-child { margin-left: -12px; }
 .footer-title {
   font-family: var(--font-serif);
   font-size: 1.1rem;
