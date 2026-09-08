@@ -46,7 +46,7 @@
 
       <nav class="nav" id="navMenu" aria-label="Primary">
         <a href="/" class="nav-link<%= currentPath === '/' ? ' is-active' : '' %>">Home</a>
-        <a href="/browse" class="nav-link<%= currentPath === '/home' ? ' is-active' : '' %>">Collection</a>
+        <a href="/browse" class="nav-link<%= (currentPath === '/browse' || currentPath.startsWith('/plant/')) ? ' is-active' : '' %>">Collection</a>
         <a href="/search" class="nav-link<%= currentPath === '/search' ? ' is-active' : '' %>">Search</a>
         <a href="/qrcodes" class="nav-link<%= currentPath === '/qrcodes' ? ' is-active' : '' %>">QR Codes</a>
         <a href="/about" class="nav-link<%= currentPath === '/about' ? ' is-active' : '' %>">About</a>
