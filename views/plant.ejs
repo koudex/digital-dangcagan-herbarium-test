@@ -5,7 +5,7 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="bc-sep">/</span>
-    <a href="/home">Collection</a>
+    <a href="/browse">Collection</a>
     <span class="bc-sep">/</span>
     <span class="bc-current"><%= plant.name %></span>
   </nav>
@@ -69,7 +69,7 @@
       <% if (plant.tags && plant.tags.length) { %>
         <div class="plant-tags">
           <% plant.tags.forEach(tag => { %>
-            <a href="/home?tag=<%= encodeURIComponent(tag) %>" class="tag">#<%= tag %></a>
+            <a href="/browse?tag=<%= encodeURIComponent(tag) %>" class="tag">#<%= tag %></a>
           <% }); %>
         </div>
       <% } %>
@@ -196,7 +196,7 @@
     <% } %>
 
     <!-- Back to collection -->
-    <a href="/home" class="btn btn-outline btn-block">Back to Collection</a>
+    <a href="/browse" class="btn btn-outline btn-block">Back to Collection</a>
   </aside>
 </div>
 
