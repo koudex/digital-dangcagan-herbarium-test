@@ -368,8 +368,14 @@ code {
   min-height: calc(100vh - var(--header-h));
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+  /* Photo background + dark green overlay layer for text legibility */
+  background-image:
+    linear-gradient(135deg, rgba(31, 63, 42, 0.88) 0%, rgba(45, 90, 61, 0.85) 60%, rgba(74, 122, 90, 0.82) 100%),
+    url("/images/hero-bg.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll; /* change to 'fixed' for parallax effect */
   color: var(--white);
   overflow: hidden;
   padding: var(--space-2xl) 0;
@@ -388,11 +394,9 @@ code {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' opacity='0.06'><path d='M20 5 Q 25 15 20 25 Q 15 15 20 5 Z' fill='white'/></svg>");
-  background-size: 80px 80px;
   pointer-events: none;
-  opacity: 0.5;
+  /* Extra darkening at bottom for text contrast (gradient fades from transparent to dark) */
+  background: linear-gradient(180deg, transparent 0%, rgba(31, 63, 42, 0.35) 100%);
 }
 
 .hero-content {
