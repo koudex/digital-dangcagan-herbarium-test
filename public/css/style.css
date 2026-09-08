@@ -1427,6 +1427,7 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  flex-shrink: 0;  /* prevent logos from being squished when text wraps */
 }
 .footer-brand img {
   border-radius: 50%;
@@ -1435,6 +1436,24 @@ code {
   object-fit: cover;
 }
 .footer-brand img:last-child { margin-left: -12px; }
+
+/* Mobile: stack logos above the text so the subtitle has full width to breathe */
+@media (max-width: 600px) {
+  .footer-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    text-align: left;
+  }
+  .footer-logos {
+    align-self: flex-start;  /* keep logos left-aligned with the text */
+  }
+  .footer-brand img {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-brand img:last-child { margin-left: -10px; }
+}
 .footer-title {
   font-family: var(--font-serif);
   font-size: 1.1rem;
