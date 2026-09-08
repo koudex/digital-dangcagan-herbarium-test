@@ -5,7 +5,7 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span class="bc-sep">/</span>
-    <a href="/browse">Collection</a>
+    <a href="/home">Collection</a>
     <span class="bc-sep">/</span>
     <span class="bc-current"><%= plant.name %></span>
   </nav>
@@ -14,9 +14,40 @@
 <!-- ─── Plant Hero ────────────────────────────────────────── -->
 <article class="plant-hero">
   <div class="container plant-hero-grid">
-    <div class="plant-hero-media reveal" data-reveal>
-      <img src="<%= plant.image %>" alt="<%= plant.name %>" />
-      <span class="plant-category-badge"><%= plant.category %></span>
+    <div class="plant-hero-col">
+      <div class="plant-hero-media reveal" data-reveal>
+        <img src="<%= plant.image %>" alt="<%= plant.name %>" />
+        <span class="plant-category-badge"><%= plant.category %></span>
+      </div>
+
+      <% if (plant.collectedBy || plant.dateCollected || plant.locationCollected) { %>
+        <aside class="collection-card reveal" data-reveal aria-label="Specimen collection data">
+          <header class="collection-card-head">
+            <svg class="collection-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <h3 class="collection-title">Specimen Collection Data</h3>
+          </header>
+          <dl class="collection-list">
+            <% if (plant.collectedBy) { %>
+              <div class="collection-row">
+                <dt>Collected by</dt>
+                <dd><%= plant.collectedBy %></dd>
+              </div>
+            <% } %>
+            <% if (plant.dateCollected) { %>
+              <div class="collection-row">
+                <dt>Date collected</dt>
+                <dd><time datetime="<%= plant.dateCollected %>"><%= new Date(plant.dateCollected).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></time></dd>
+              </div>
+            <% } %>
+            <% if (plant.locationCollected) { %>
+              <div class="collection-row">
+                <dt>Where located</dt>
+                <dd><%= plant.locationCollected %></dd>
+              </div>
+            <% } %>
+          </dl>
+        </aside>
+      <% } %>
     </div>
 
     <div class="plant-hero-info reveal" data-reveal>
@@ -38,7 +69,7 @@
       <% if (plant.tags && plant.tags.length) { %>
         <div class="plant-tags">
           <% plant.tags.forEach(tag => { %>
-            <a href="/browse?tag=<%= encodeURIComponent(tag) %>" class="tag">#<%= tag %></a>
+            <a href="/home?tag=<%= encodeURIComponent(tag) %>" class="tag">#<%= tag %></a>
           <% }); %>
         </div>
       <% } %>
@@ -165,7 +196,7 @@
     <% } %>
 
     <!-- Back to collection -->
-    <a href="/browse" class="btn btn-outline btn-block">Back to Collection</a>
+    <a href="/home" class="btn btn-outline btn-block">Back to Collection</a>
   </aside>
 </div>
 
