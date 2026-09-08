@@ -31,9 +31,11 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Dangcagan NHS Herbarium Home">
-        <img src="/images/logo.jpeg" alt="Dangcagan National High School logo" class="brand-logo" width="44" height="44" />
-        <span class="brand-text">
-          <span class="brand-name">Dangcagan NHS</span>
+        <span class="brand-logos">
+          <img src="/images/logo.jpeg" alt="Dangcagan National High School logo" class="brand-logo" width="40" height="40" />
+          <img src="/images/logo2.jpeg" alt="STEM logo" class="brand-logo brand-logo-alt" width="40" height="40" />
+        </span>
+        <span class="brand-text">          <span class="brand-name">Dangcagan NHS</span>
           <span class="brand-tagline">Digital Herbarium</span>
         </span>
       </a>
@@ -44,7 +46,7 @@
 
       <nav class="nav" id="navMenu" aria-label="Primary">
         <a href="/" class="nav-link<%= currentPath === '/' ? ' is-active' : '' %>">Home</a>
-        <a href="/browse" class="nav-link<%= currentPath === '/browse' ? ' is-active' : '' %>">Collection</a>
+        <a href="/home" class="nav-link<%= currentPath === '/home' ? ' is-active' : '' %>">Collection</a>
         <a href="/search" class="nav-link<%= currentPath === '/search' ? ' is-active' : '' %>">Search</a>
         <a href="/qrcodes" class="nav-link<%= currentPath === '/qrcodes' ? ' is-active' : '' %>">QR Codes</a>
         <a href="/about" class="nav-link<%= currentPath === '/about' ? ' is-active' : '' %>">About</a>
