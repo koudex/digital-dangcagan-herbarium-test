@@ -1019,7 +1019,9 @@ code {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-xl);
-  padding: var(--space-xl) 0 var(--space-2xl);
+  /* Only set vertical padding — horizontal padding comes from .container */
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
 }
 
 .plant-section {
